@@ -9,13 +9,10 @@ class SearchBar extends Component {
   }
 
   render() {  
-  // always manipulate our state with setState, never this.state = ... only do that inside the constructor
-  // not modifying the value of term, just referenceing it
+  // whenever we call setState it causes our componenet to automatically re-render and push to the DOM
   return (
     <div>
     <input onChange={(event) => this.setState({term: event.target.value })} />  
-    <br />
-    Value of the input: {this.state.term}
     </div>
     );
 }
