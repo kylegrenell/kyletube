@@ -7,7 +7,6 @@ import SearchBar from './components/search_bar';
 
 const API_KEY = 'AIzaSyDetN9Q18C5GAdvLPy6PElFRpzYGYItnb4';
 
-
 // const es6 declares variable, const says this is the final value of this variable. It's actually a constant. App = 5 would throw an error
 
 // <div> jsx is really javascript
