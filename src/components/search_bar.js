@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class SearchBar extends Component {
-
+// class based components are used whenever we need a component to be aware of state - ie data changing over time, user events we need to keep track of when renders
   constructor(props) {
     super(props);
 
@@ -9,10 +9,11 @@ class SearchBar extends Component {
   }
 
   render() {  
-  // whenever we call setState it causes our componenet to automatically re-render and push to the DOM
   return (
     <div>
-    <input onChange={(event) => this.setState({term: event.target.value })} />  
+    <input 
+    value={this.state.term}
+    onChange={(event) => this.setState({term: event.target.value })} />  
     </div>
     );
 }
