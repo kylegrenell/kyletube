@@ -12,3 +12,5 @@ npm install --save lodash
 
 This app also uses a youtube API key, if there's any issues running the App you can generate your own key here: https://developers.google.com/youtube/v3/getting-started
 and replace the API_KEY located in index.js 
+
+![...](http://i.imgur.com/QoIrQzj.png "Kyletube")
