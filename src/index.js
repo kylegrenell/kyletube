@@ -28,10 +28,13 @@ class App extends Component {
   }
 
   render() {
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300)
+    // this is a version of the inner function hat can only be called every 300 miliseconds -- so the user only sees after this time frame rather than every character they search updating
+
   return (
         <div>
         <h2 id="header">Kyletube</h2>
-          <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
+          <SearchBar onSearchTermChange={videoSearch} />
           <VideoDetail video={this.state.selectedVideo} />
           <VideoList
             onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
