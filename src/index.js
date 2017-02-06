@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import YTSearch from 'youtube-api-search'
-import SearchBar from './components/search_bar'
-import VideoList from './components/video_list'
-import VideoDetail from './components/video_detail'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
+import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 const API_KEY = 'AIzaSyDetN9Q18C5GAdvLPy6PElFRpzYGYItnb4'
 
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
 
-    this.state = { 
+    this.state = {
       videos: [],
-      selectedVideo: null 
+      selectedVideo: null
     };
 
-    YTSearch({key: API_KEY, term: 'synthesizer'}, (videos) => {
+    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0] 
@@ -23,13 +23,16 @@ class App extends Component {
     })
   }
 
-  render(){
-    return (
-      <div>
-      <SearchBar />
-      <VideoDetail video={this.state.selectedVideo}/>
-      <VideoList videos={this.state.videos} />      
-      </div>
+  render() {
+  return (
+        <div>
+        <h2 id="header">Kyletube</h2>
+          <SearchBar />
+          <VideoDetail video={this.state.selectedVideo} />
+          <VideoList
+            onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
+            videos={this.state.videos} />
+        </div>
       )
   }
 }
