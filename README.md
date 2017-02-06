@@ -7,6 +7,7 @@ Continued practice for refactoring and understanding the changes from vanillaJS 
 To use:
 
 npm install
+
 npm install --save lodash
 
 This app also uses a youtube API key, if there's any issues running the App you can generate your own key here: https://developers.google.com/youtube/v3/getting-started
